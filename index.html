@@ -12,13 +12,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            black: '#090a0f',
-                            dark: '#111318',
-                            card: '#181b22',
-                            border: '#262a36',
-                            bone: '#e7e5d8',
-                            boneMuted: '#9fa09c',
-                            accent: '#d4cfb8'
+                            dark: '#0f172a',    /* Slate 900 */
+                            card: '#1e293b',    /* Slate 800 */
+                            accent: '#ea580c',  /* Blaze Orange */
+                            accentHover: '#c2410c',
+                            muted: '#94a3b8'    /* Slate 400 */
                         }
                     }
                 }
@@ -28,140 +26,211 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-brand-black text-brand-bone font-sans antialiased selection:bg-brand-bone selection:text-brand-black">
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-brand-black/90 backdrop-blur border-b border-brand-border">
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <!-- Inline Logo Mark -->
-                <svg class="w-8 h-8 text-brand-bone shrink-0" viewBox="0 0 100 130" fill="currentColor">
-                    <polygon points="50,5 95,65 50,125 5,65" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
-                    <polygon points="50,105 25,65 75,65" fill="currentColor"/>
-                    <circle cx="50" cy="50" r="5" fill="currentColor"/>
-                </svg>
+                <div class="w-10 h-10 bg-brand-accent rounded flex items-center justify-center font-black text-xl tracking-wider text-white">V</div>
                 <div class="leading-tight">
-                    <span class="block font-black tracking-widest text-base uppercase text-brand-bone">Vantage</span>
-                    <span class="block text-[10px] uppercase tracking-[0.25em] text-brand-boneMuted">Training Solutions</span>
+                    <span class="block font-bold tracking-wider text-lg uppercase text-white">Vantage</span>
+                    <span class="block text-xs uppercase tracking-widest text-brand-muted">Training Solutions</span>
                 </div>
             </a>
 
-            <!-- Navigation Links -->
-            <div class="flex items-center gap-6 text-sm font-medium tracking-wide">
-                <a href="#schedule" class="text-brand-boneMuted hover:text-brand-bone transition">Schedule</a>
-                <a href="#about" class="text-brand-boneMuted hover:text-brand-bone transition hidden sm:inline">Standards</a>
-                <a href="#contact" class="bg-brand-bone hover:bg-white text-brand-black px-5 py-2.5 rounded font-bold uppercase tracking-wider text-xs transition">Inquire</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#courses" class="text-slate-300 hover:text-white transition">Courses</a>
+                <a href="#schedule" class="text-slate-300 hover:text-white transition">Schedule</a>
+                <a href="#about" class="text-slate-300 hover:text-white transition">About</a>
+                <a href="#faq" class="text-slate-300 hover:text-white transition">FAQ</a>
+                <a href="#contact" class="bg-brand-accent hover:bg-brand-accentHover text-white px-5 py-2.5 rounded font-semibold transition shadow-lg shadow-brand-accent/20">Register</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Full Logo Display -->
-    <header class="relative pt-36 pb-20 md:pt-48 md:pb-32 border-b border-brand-border bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-card via-brand-black to-brand-black">
-        <div class="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-            
-            <!-- Hero Centered Emblem -->
-            <div class="mb-8">
-                <svg class="w-20 h-24 text-brand-bone mx-auto mb-4" viewBox="0 0 100 130" fill="currentColor">
-                    <polygon points="50,5 95,65 50,125 5,65" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
-                    <polygon points="50,105 25,65 75,65" fill="currentColor"/>
-                    <circle cx="50" cy="50" r="5" fill="currentColor"/>
-                </svg>
-                <span class="block text-3xl md:text-5xl font-black tracking-[0.25em] uppercase text-brand-bone">Vantage</span>
-                <span class="block text-xs md:text-sm font-semibold tracking-[0.4em] uppercase text-brand-boneMuted mt-2">Training Solutions</span>
+    <!-- Hero Section -->
+    <header class="relative pt-36 pb-24 md:pt-48 md:pb-36 border-b border-slate-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800/40 via-brand-dark to-brand-dark">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-700 bg-slate-800/60 text-brand-accent text-xs font-semibold tracking-wider uppercase mb-6">
+                <i data-lucide="shield-check" class="w-4 h-4"></i> Performance-Driven Instruction
             </div>
-
-            <div class="w-12 h-0.5 bg-brand-border my-4"></div>
-
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-brand-bone mb-6 uppercase">
-                Precision & Mastery Under Pressure
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 uppercase">
+                Precision & Mastery <br class="hidden sm:inline"> <span class="text-brand-accent">Under Pressure</span>
             </h1>
-            <p class="text-base md:text-lg text-brand-boneMuted max-w-2xl mx-auto mb-10 leading-relaxed">
-                Structured, diagnostic firearms instruction designed to develop accuracy at speed in dynamic situations.
+            <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto mb-10 leading-relaxed">
+                Structured, evidence-based firearms training for practical defense, marksmanship fundamentals, and recoil management.
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md">
-                <a href="#schedule" class="bg-brand-bone hover:bg-white text-brand-black px-8 py-4 rounded font-bold uppercase tracking-wider text-xs transition shadow-lg flex items-center justify-center gap-2">
-                    <i data-lucide="calendar" class="w-4 h-4"></i> View Class Schedule
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#schedule" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 rounded font-bold uppercase tracking-wider text-sm transition shadow-lg shadow-brand-accent/25 flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> View Upcoming Classes
                 </a>
-                <a href="#contact" class="bg-brand-card hover:bg-brand-dark text-brand-bone border border-brand-border px-8 py-4 rounded font-bold uppercase tracking-wider text-xs transition flex items-center justify-center gap-2">
-                    Private Instruction
+                <a href="#courses" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-8 py-4 rounded font-bold uppercase tracking-wider text-sm transition flex items-center justify-center gap-2">
+                    Explore Curriculum
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Value Pillars / Philosophy -->
-    <section id="about" class="py-20 bg-brand-dark border-b border-brand-border">
+    <!-- Value Pillars -->
+    <section class="py-16 bg-slate-950 border-b border-slate-850">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-            <div class="flex items-start gap-4 p-6 rounded-xl bg-brand-black border border-brand-border">
-                <div class="p-3 bg-brand-card border border-brand-border rounded text-brand-bone">
+            <div class="flex items-start gap-4">
+                <div class="p-3 bg-slate-800 border border-slate-700 rounded-lg text-brand-accent">
                     <i data-lucide="crosshair" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-brand-bone text-lg mb-1 uppercase tracking-wide text-sm">Individual Coaching</h3>
-                    <p class="text-sm text-brand-boneMuted leading-relaxed">One on one training that will leave you with a clear path forward in your personal training.</p>
+                    <h3 class="font-bold text-white text-lg mb-1">Diagnostic Coaching</h3>
+                    <p class="text-sm text-brand-muted">We don't teach dogma. We isolate mechanical inefficiencies using data, timers, and high-speed feedback.</p>
                 </div>
             </div>
-            <div class="flex items-start gap-4 p-6 rounded-xl bg-brand-black border border-brand-border">
-                <div class="p-3 bg-brand-card border border-brand-border rounded text-brand-bone">
+            <div class="flex items-start gap-4">
+                <div class="p-3 bg-slate-800 border border-slate-700 rounded-lg text-brand-accent">
                     <i data-lucide="shield" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-brand-bone text-lg mb-1 uppercase tracking-wide text-sm">Training Built for Duty</h3>
-                    <p class="text-sm text-brand-boneMuted leading-relaxed">Experience drawn from years of full time SWAT Sniper Team Leader experience from a major city inside of Texas.</p>
+                    <h3 class="font-bold text-white text-lg mb-1">Uncompromising Safety</h3>
+                    <p class="text-sm text-brand-muted">A strict safety standard allows for dynamic, high-pace training without unnecessary risk.</p>
                 </div>
             </div>
-            <div class="flex items-start gap-4 p-6 rounded-xl bg-brand-black border border-brand-border">
-                <div class="p-3 bg-brand-card border border-brand-border rounded text-brand-bone">
+            <div class="flex items-start gap-4">
+                <div class="p-3 bg-slate-800 border border-slate-700 rounded-lg text-brand-accent">
                     <i data-lucide="award" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-brand-bone text-lg mb-1 uppercase tracking-wide text-sm">Competition Based Training</h3>
-                    <p class="text-sm text-brand-boneMuted leading-relaxed">Training lead by a Grand Master in USPSA Carry Optics Division.</p>
+                    <h3 class="font-bold text-white text-lg mb-1">Measurable Progression</h3>
+                    <p class="text-sm text-brand-muted">Clear standards and benchmark drills ensure you leave the range with quantifiable skill improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Curriculum</h2>
+            <p class="text-3xl md:text-4xl font-extrabold text-white">Course Offerings</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-brand-card border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Foundational</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Practical Pistol Fundamentals</h3>
+                    <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                        Master the core mechanics: grip pressure, sight alignment, trigger control, and efficient recoil mitigation.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Grip building & biomechanics</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Draw stroke efficiency</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> 300-round requirement</li>
+                    </ul>
+                </div>
+                <div class="border-t border-slate-700/60 pt-6 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-brand-muted uppercase">Duration</span>
+                        <p class="font-bold text-white">1-Day / 6 Hrs</p>
+                    </div>
+                    <a href="#schedule" class="text-brand-accent hover:text-white font-semibold text-sm flex items-center gap-1 transition">
+                        Enroll <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 (Featured) -->
+            <div class="bg-brand-card border-2 border-brand-accent/60 rounded-xl p-8 flex flex-col justify-between relative shadow-xl shadow-brand-accent/5">
+                <span class="absolute -top-3 right-6 bg-brand-accent text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded">Popular</span>
+                <div>
+                    <div class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Intermediate / Advanced</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Defensive & Dynamic Pistol</h3>
+                    <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                        Push speed and accuracy under stress with target transitions, shooting on the move, and weapon manipulations.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Target transitions & splits</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Positional shooting & movement</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> 500-round requirement</li>
+                    </ul>
+                </div>
+                <div class="border-t border-slate-700/60 pt-6 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-brand-muted uppercase">Duration</span>
+                        <p class="font-bold text-white">1-Day / 8 Hrs</p>
+                    </div>
+                    <a href="#schedule" class="text-brand-accent hover:text-white font-semibold text-sm flex items-center gap-1 transition">
+                        Enroll <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-brand-card border border-slate-800 rounded-xl p-8 flex flex-col justify-between hover:border-slate-700 transition">
+                <div>
+                    <div class="text-xs font-bold text-brand-accent uppercase tracking-wider mb-2">Bespoke Training</div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Private 1-on-1 Coaching</h3>
+                    <p class="text-brand-muted text-sm mb-6 leading-relaxed">
+                        Tailored coaching focused entirely on your individual training goals, equipment setup, or competitive tuning.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Video diagnostic review</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Custom dry-fire routines</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent"></i> Flexible ammo count</li>
+                    </ul>
+                </div>
+                <div class="border-t border-slate-700/60 pt-6 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs text-brand-muted uppercase">Duration</span>
+                        <p class="font-bold text-white">Custom / Hourly</p>
+                    </div>
+                    <a href="#contact" class="text-brand-accent hover:text-white font-semibold text-sm flex items-center gap-1 transition">
+                        Inquire <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Schedule Table -->
-    <section id="schedule" class="py-24 bg-brand-black border-b border-brand-border">
+    <section id="schedule" class="py-20 bg-slate-950 border-y border-slate-800">
         <div class="max-w-5xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
-                    <h2 class="text-xs font-bold text-brand-boneMuted uppercase tracking-widest mb-2">Training Calendar</h2>
-                    <p class="text-3xl font-extrabold text-brand-bone uppercase">Upcoming Dates</p>
+                    <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Training Calendar</h2>
+                    <p class="text-3xl font-extrabold text-white">Upcoming Dates</p>
                 </div>
-                <p class="text-xs text-brand-boneMuted mt-2 md:mt-0 tracking-wide">Class sizes are capped to maintain an optimal student-to-instructor ratio.</p>
+                <p class="text-sm text-brand-muted mt-2 md:mt-0">Class sizes are capped to maintain an optimal student-to-instructor ratio.</p>
             </div>
 
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm border border-brand-border rounded-lg overflow-hidden">
-                    <thead class="bg-brand-card text-brand-boneMuted uppercase text-xs border-b border-brand-border">
+                <table class="w-full text-left text-sm border border-slate-800 rounded-lg overflow-hidden">
+                    <thead class="bg-brand-card text-brand-muted uppercase text-xs border-b border-slate-800">
                         <tr>
                             <th class="p-4">Date</th>
                             <th class="p-4">Course</th>
                             <th class="p-4">Location</th>
-                            <th class="p-4">Availability</th>
+                            <th class="p-4">Status</th>
                             <th class="p-4 text-right">Action</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-brand-border bg-brand-dark text-brand-boneMuted">
+                    <tbody class="divide-y divide-slate-800 bg-brand-dark text-slate-300">
                         <tr>
-                            <td class="p-4 font-semibold text-brand-bone">Oct 17, 2026</td>
-                            <td class="p-4 text-brand-bone">Practical Fundamentals</td>
-                            <td class="p-4">Private Range Facility</td>
-                            <td class="p-4"><span class="px-2.5 py-1 rounded bg-brand-card text-brand-bone text-xs font-medium border border-brand-border">4 Spots Left</span></td>
+                            <td class="p-4 font-semibold text-white">Oct 17, 2026</td>
+                            <td class="p-4">Practical Pistol Fundamentals</td>
+                            <td class="p-4 text-brand-muted">Private Range Facility</td>
+                            <td class="p-4"><span class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 text-xs font-medium border border-emerald-800/40">4 Spots Left</span></td>
                             <td class="p-4 text-right">
-                                <a href="#contact" class="text-brand-bone hover:underline font-bold text-xs uppercase tracking-wider">Reserve</a>
+                                <a href="#contact" class="text-brand-accent hover:underline font-semibold">Reserve</a>
                             </td>
                         </tr>
                         <tr>
-                            <td class="p-4 font-semibold text-brand-bone">Nov 07, 2026</td>
-                            <td class="p-4 text-brand-bone">Defensive & Dynamic Pistol</td>
-                            <td class="p-4">Private Range Facility</td>
-                            <td class="p-4"><span class="px-2.5 py-1 rounded bg-brand-card text-brand-bone text-xs font-medium border border-brand-border">Open</span></td>
+                            <td class="p-4 font-semibold text-white">Nov 07, 2026</td>
+                            <td class="p-4">Defensive & Dynamic Pistol</td>
+                            <td class="p-4 text-brand-muted">Private Range Facility</td>
+                            <td class="p-4"><span class="px-2.5 py-1 rounded bg-emerald-950 text-emerald-400 text-xs font-medium border border-emerald-800/40">Open</span></td>
                             <td class="p-4 text-right">
-                                <a href="#contact" class="text-brand-bone hover:underline font-bold text-xs uppercase tracking-wider">Reserve</a>
+                                <a href="#contact" class="text-brand-accent hover:underline font-semibold">Reserve</a>
                             </td>
                         </tr>
                     </tbody>
@@ -171,60 +240,58 @@
     </section>
 
     <!-- Registration / Contact Section -->
-    <section id="contact" class="py-24 max-w-3xl mx-auto px-6">
-        <div class="bg-brand-dark border border-brand-border rounded-2xl p-8 md:p-12 shadow-2xl">
+    <section id="contact" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="bg-brand-card border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl">
             <div class="text-center mb-10">
-                <h2 class="text-xs font-bold text-brand-boneMuted uppercase tracking-widest mb-2">Connect</h2>
-                <h3 class="text-2xl md:text-3xl font-bold text-brand-bone uppercase tracking-tight">Registration & Inquiries</h3>
-                <p class="text-brand-boneMuted text-sm mt-2">Submit your details to reserve a spot or request private instruction.</p>
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest mb-2">Get Started</h2>
+                <h3 class="text-3xl font-bold text-white">Register or Inquire</h3>
+                <p class="text-brand-muted text-sm mt-2">Have questions about gear requirements, prerequisites, or private bookings?</p>
             </div>
 
             <!-- Form -->
             <form class="space-y-6" onsubmit="event.preventDefault(); alert('Registration request submitted! We will follow up shortly.');">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-brand-boneMuted mb-2 font-semibold">Full Name</label>
-                        <input type="text" required class="w-full bg-brand-black border border-brand-border rounded px-4 py-3 text-brand-bone focus:outline-none focus:border-brand-bone">
+                        <label class="block text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Full Name</label>
+                        <input type="text" required class="w-full bg-slate-900 border border-slate-700 rounded px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent">
                     </div>
                     <div>
-                        <label class="block text-xs uppercase tracking-wider text-brand-boneMuted mb-2 font-semibold">Email Address</label>
-                        <input type="email" required class="w-full bg-brand-black border border-brand-border rounded px-4 py-3 text-brand-bone focus:outline-none focus:border-brand-bone">
+                        <label class="block text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Email Address</label>
+                        <input type="email" required class="w-full bg-slate-900 border border-slate-700 rounded px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-brand-boneMuted mb-2 font-semibold">Training Interest</label>
-                    <input type="text" placeholder="e.g., Upcoming Class Date, Private Coaching, Group Session" required class="w-full bg-brand-black border border-brand-border rounded px-4 py-3 text-brand-bone focus:outline-none focus:border-brand-bone">
+                    <label class="block text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Interested Course / Service</label>
+                    <select class="w-full bg-slate-900 border border-slate-700 rounded px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent">
+                        <option>Practical Pistol Fundamentals</option>
+                        <option>Defensive & Dynamic Pistol</option>
+                        <option>Private 1-on-1 Coaching</option>
+                        <option>General Question</option>
+                    </select>
                 </div>
 
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-brand-boneMuted mb-2 font-semibold">Experience & Notes</label>
-                    <textarea rows="4" placeholder="Briefly describe your shooting background or specific training goals..." class="w-full bg-brand-black border border-brand-border rounded px-4 py-3 text-brand-bone focus:outline-none focus:border-brand-bone"></textarea>
+                    <label class="block text-xs uppercase tracking-wider text-slate-400 mb-2 font-semibold">Experience Level / Message</label>
+                    <textarea rows="4" placeholder="Briefly describe your shooting background or questions..." class="w-full bg-slate-900 border border-slate-700 rounded px-4 py-3 text-slate-200 focus:outline-none focus:border-brand-accent"></textarea>
                 </div>
 
-                <button type="submit" class="w-full bg-brand-bone hover:bg-white text-brand-black py-4 rounded font-bold uppercase tracking-wider text-xs transition">
-                    Submit Request
+                <button type="submit" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white py-4 rounded font-bold uppercase tracking-wider text-sm transition">
+                    Submit Registration Request
                 </button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-brand-border bg-brand-black py-12 text-xs text-brand-boneMuted">
+    <footer class="border-t border-slate-800 bg-brand-dark py-12 text-sm text-brand-muted">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-brand-bone" viewBox="0 0 100 130" fill="currentColor">
-                    <polygon points="50,5 95,65 50,125 5,65" fill="none" stroke="currentColor" stroke-width="12" stroke-linejoin="round"/>
-                    <polygon points="50,105 25,65 75,65" fill="currentColor"/>
-                    <circle cx="50" cy="50" r="5" fill="currentColor"/>
-                </svg>
-                <div>
-                    <span class="text-brand-bone font-bold tracking-wider uppercase">Vantage Training Solutions, LLC</span>
-                    <p class="text-[11px] text-slate-500">© 2026 Vantage Training Solutions, LLC. All rights reserved.</p>
-                </div>
+            <div>
+                <span class="text-white font-bold tracking-wider uppercase">Vantage Training Solutions, LLC</span>
+                <p class="text-xs text-slate-500 mt-1">© 2026 Vantage Training Solutions, LLC. All rights reserved.</p>
             </div>
-            <div class="text-[11px] text-slate-500 max-w-md text-center md:text-right">
-                All participants must complete standard liability waivers and follow all range safety commands.
+            <div class="text-xs text-slate-500 max-w-md text-center md:text-right">
+                Safety is non-negotiable. All students must sign liability waivers and adhere to strict range safety protocols prior to participation.
             </div>
         </div>
     </footer>
